@@ -1,6 +1,12 @@
 <form class="c-form" 
-        action="{{url_for('cliente.inserir_cliente')}}"
-        method="POST"
+        {% if cliente %}
+            action="{{url_for('cliente.atualizar_cliente', cliente_id=cliente.id)}}"
+        {% else %}
+            action="{{url_for('cliente.inserir_cliente')}}"
+        {% endif %}
+
+        method="{% if cliente %}PUT{% else %}POST{% endif %}"
+        
         c-append="#lista-clientes">
 
     <div class="mb-3">
