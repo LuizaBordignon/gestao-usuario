@@ -1,4 +1,4 @@
-from peewee import CharField, Model, DateField, DateTimeField
+from peewee import CharField, Model, DateField, DateTimeField, datetime
 from database.database import db
 
 class Cliente(Model):
